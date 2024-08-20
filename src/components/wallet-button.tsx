@@ -1,8 +1,9 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { HStack, Text } from "@chakra-ui/react";
 import wallet from "@/assets/wallet.png";
 import walletHover from "@/assets/wallet-hover.png";
-import { Link } from "react-router-dom";
 import ROUTES from "@/routes";
+import Link from "next/link";
+import Image from "next/image";
 // import { useSelector } from "react-redux";
 // import { selectMyWallets } from "@/features/wallet/redux/wallet.selectors";
 // import { selectUserId } from "@/features/auth/redux/auth.selectors";
@@ -21,12 +22,17 @@ function WalletButton() {
   };
 
   return (
-    <Link to={handleNavigate()}>
+    <Link href={handleNavigate()}>
       <HStack
         bg="#D9D9D9"
         p="2px 15px"
         borderRadius="25px"
         spacing={3}
+        sx={{
+          ".hover": {
+            display: "none"
+          }
+        }}
         _hover={{
           bg: "primary",
           p: {
@@ -41,7 +47,7 @@ function WalletButton() {
         }}
       >
         <Image src={wallet} alt="" className="show" />
-        <Image src={walletHover} alt="" className="hover" display="none" />
+        <Image src={walletHover} alt="" className="hover" />
         <Text fontSize="sm" color="#000">
           Wallet
         </Text>

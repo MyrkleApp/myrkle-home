@@ -1,3 +1,5 @@
+"use client"
+
 import { Box } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
 import SectionA from "./section-a";
@@ -89,14 +91,14 @@ function LandingPage() {
     <Box w="100vw" h="100vh" pos="relative" bg="darker" overflow="hidden scroll">
       <HomeNavbar />
 
-      <SectionA />
+      {/* <SectionA />
 
       <Box h="100px" />
 
       <SectionB />
       <BubbleSection />
       <SectionI />
-      <SectionJ />
+      <SectionJ /> */}
     </Box>
   );
 }

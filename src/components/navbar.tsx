@@ -1,9 +1,11 @@
+"use client"
+
 import LogoIcon from "@/icons/logo";
 import { Flex, HStack, Text } from "@chakra-ui/react";
-import { useLocation } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+// import { HashLink } from "react-router-hash-link";
 import ROUTES from "@/routes";
 import WalletButton from "./wallet-button";
+import { usePathname } from "next/navigation";
 
 const links = [
   { name: "home", path: `${ROUTES.LANDING}#home` },
@@ -12,7 +14,7 @@ const links = [
 ];
 
 function HomeNavbar() {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   const getNavItemColor = (route: string) => {
     return pathname === route ? "primary" : "#fff";
@@ -30,7 +32,7 @@ function HomeNavbar() {
     >
       <LogoIcon fontSize="80px" ml="50px" />
       <HStack spacing={10} mr="50px">
-        {links.slice(0, 2).map((link, i) => (
+        {/* {links.slice(0, 2).map((link, i) => (
           <HashLink key={i} to={link.path}>
             <Text
               fontSize="xs"
@@ -42,7 +44,7 @@ function HomeNavbar() {
               {link.name}
             </Text>
           </HashLink>
-        ))}
+        ))} */}
         <a href="https://twitter.com/MyrkleApp" target="_blank">
           <Text
             fontSize="xs"
