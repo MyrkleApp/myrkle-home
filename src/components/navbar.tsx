@@ -2,10 +2,10 @@
 
 import LogoIcon from "@/icons/logo";
 import { Flex, HStack, Text } from "@chakra-ui/react";
-// import { HashLink } from "react-router-hash-link";
 import ROUTES from "@/routes";
 import WalletButton from "./wallet-button";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const links = [
   { name: "home", path: `${ROUTES.LANDING}#home` },
@@ -32,8 +32,8 @@ function HomeNavbar() {
     >
       <LogoIcon fontSize="80px" ml="50px" />
       <HStack spacing={10} mr="50px">
-        {/* {links.slice(0, 2).map((link, i) => (
-          <HashLink key={i} to={link.path}>
+        {links.slice(0, 2).map((link, i) => (
+          <Link key={i} href={link.path}>
             <Text
               fontSize="xs"
               fontWeight="bold"
@@ -43,8 +43,8 @@ function HomeNavbar() {
             >
               {link.name}
             </Text>
-          </HashLink>
-        ))} */}
+          </Link>
+        ))}
         <a href="https://twitter.com/MyrkleApp" target="_blank">
           <Text
             fontSize="xs"
