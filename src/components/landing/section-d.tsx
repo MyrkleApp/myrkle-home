@@ -2,8 +2,8 @@ import { MotionBox } from "@/components/motion-elements";
 import d1 from "@/assets/landing-page/d1.png";
 import d2 from "@/assets/landing-page/d2.png";
 import { Image, Text } from "@chakra-ui/react";
-import WhiteRing from "@/components/white-ring";
 import { generateAnimateObject } from "@/helpers";
+import WhiteRing from "../white-ring";
 
 function SectionD() {
   return (

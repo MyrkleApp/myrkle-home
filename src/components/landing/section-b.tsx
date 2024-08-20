@@ -1,8 +1,8 @@
-import { MotionBox, MotionText } from "@/components/motion-elements";
-import WhiteRing from "@/components/white-ring";
-import { generateAnimateObject } from "@/helpers";
 import MyCarousel from "@/components/carousel";
 import { useState } from "react";
+import { MotionBox, MotionText } from "../motion-elements";
+import WhiteRing from "../white-ring";
+import { generateAnimateObject } from "@/helpers";
 
 const ringLocations1 = [
   [0, 0],

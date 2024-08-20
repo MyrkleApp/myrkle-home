@@ -2,21 +2,15 @@ import { Box } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
 import SectionA from "./section-a";
 import SectionB from "./section-b";
-// import SectionC from "./section-c";
-// import SectionD from "./section-d";
-// import SectionE from "./section-e";
-// import SectionF from "./section-f";
-// import SectionG from "./section-g";
-// import SectionH from "./section-h";
 import SectionI from "./section-i";
 import SectionJ from "./section-j";
 import { useDebounce } from "react-use";
-import { useSearchParams } from "react-router-dom";
 import BubbleSection from "./bubble-section";
 import HomeNavbar from "../navbar";
+import { useSearchParams } from "next/navigation";
 
 function LandingPage() {
-  const [searchParams] = useSearchParams();
+  const searchParams = useSearchParams();
   const section = searchParams.get("section");
 
   const [activeSection, setActiveSection] = useState(1);
@@ -101,27 +95,8 @@ function LandingPage() {
 
       <SectionB />
       <BubbleSection />
-      {/* <SectionC />
-      <SectionD />
-      <SectionE /> */}
-      {/* <SectionF />
-      <SectionG />
-      <SectionH /> */}
       <SectionI />
       <SectionJ />
-
-      {/* <AnimatePresence>
-        {activeSection === 1 && <SectionA />}
-        {activeSection === 2 && <SectionB />}
-        {activeSection === 3 && <SectionC />}
-        {activeSection === 4 && <SectionD />}
-        {activeSection === 5 && <SectionE />}
-        {activeSection === 6 && <SectionF />}
-        {activeSection === 7 && <SectionG />}
-        {activeSection === 8 && <SectionH />}
-        {activeSection === 9 && <SectionI />}
-        {activeSection === 10 && <SectionJ />}
-      </AnimatePresence> */}
     </Box>
   );
 }

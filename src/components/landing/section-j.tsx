@@ -1,9 +1,9 @@
 import { MotionBox } from "@/components/motion-elements";
 import { Button, Flex, HStack, Image, Input, Text } from "@chakra-ui/react";
 import ArrowRight3Icon from "@/icons/arrow-right-3";
-import Footer from "@/layout/home-layout/footer";
 import spark1 from "@/assets/landing-page/spark1.png";
 import spark2 from "@/assets/landing-page/spark2.png";
+import Footer from "../footer";
 
 function SectionJ() {
   return (

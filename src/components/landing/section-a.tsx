@@ -1,4 +1,3 @@
-import { MotionBox, MotionImage } from "@/components/motion-elements";
 import { Flex, Image, Text } from "@chakra-ui/react";
 import spark1 from "@/assets/landing-page/spark1.png";
 import spark2 from "@/assets/landing-page/spark2.png";
@@ -6,6 +5,7 @@ import a1 from "@/assets/landing-page/a1.png";
 import a2 from "@/assets/landing-page/a2.png";
 import a3 from "@/assets/landing-page/a3.png";
 import a4 from "@/assets/landing-page/a4.png";
+import { MotionBox, MotionImage } from "../motion-elements";
 
 function SectionA() {
   return (

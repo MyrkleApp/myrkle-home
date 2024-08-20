@@ -1,21 +1,19 @@
 import LogoIcon from "@/icons/logo";
+import ROUTES from "@/routes";
 import { Flex, HStack, Text } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-import ROUTES from "@/routes";
-import WalletButton from "./wallet-button";
 
 const links = [
-  { name: "home", path: `${ROUTES.LANDING}#home` },
-  { name: "about", path: `${ROUTES.LANDING}#about` },
+  { name: "home", path: `#home` },
+  { name: "about", path: `#about` },
   { name: "twitter (x)", path: ROUTES.CONTACT },
 ];
 
-function HomeNavbar() {
+function Footer() {
   const { pathname } = useLocation();
 
   const getNavItemColor = (route: string) => {
-    return pathname === route ? "primary" : "#fff";
+    return pathname === route ? "#000" : "#fff";
   };
 
   return (
@@ -23,25 +21,26 @@ function HomeNavbar() {
       align="center"
       justify="space-between"
       h="60px"
-      w="100%"
+      w="90%"
+      ml="5%"
       pos="absolute"
-      bg="#FFFFFF03"
+      bottom="20px"
       zIndex={1000}
     >
-      <LogoIcon fontSize="80px" ml="50px" />
+      <LogoIcon fontSize="100px" ml="50px" />
       <HStack spacing={10} mr="50px">
         {links.slice(0, 2).map((link, i) => (
-          <HashLink key={i} to={link.path}>
+          <a key={i} href={link.path}>
             <Text
               fontSize="xs"
               fontWeight="bold"
               textTransform="uppercase"
               color={getNavItemColor(link.path)}
-              _hover={{ color: "primary" }}
+              _hover={{ color: "#000" }}
             >
               {link.name}
             </Text>
-          </HashLink>
+          </a>
         ))}
         <a href="https://twitter.com/MyrkleApp" target="_blank">
           <Text
@@ -49,15 +48,14 @@ function HomeNavbar() {
             fontWeight="bold"
             textTransform="uppercase"
             color={getNavItemColor(links[2].path)}
-            _hover={{ color: "primary" }}
+            _hover={{ color: "#000" }}
           >
             {links[2].name}
           </Text>
         </a>
-        {pathname !== ROUTES.SELECT_MYRKLE_APP && <WalletButton />}
       </HStack>
     </Flex>
   );
 }
 
-export default HomeNavbar;
+export default Footer;
