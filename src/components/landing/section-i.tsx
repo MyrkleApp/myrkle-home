@@ -4,6 +4,7 @@ import { Box } from "@chakra-ui/react";
 import ROUTES from "@/routes";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { novaBlackFont } from "@/app/fonts";
 
 function SectionI() {
   const router = useRouter();
@@ -21,7 +22,7 @@ function SectionI() {
     >
       <Box pos="absolute" top="22%" left="50%" w="70%" transform="translate(-50%)" zIndex={1}>
         <MotionText
-          className="font-face-proxima-nova-black"
+          className={novaBlackFont.className}
           fontSize="40px"
           textAlign="center"
           mb="40px"

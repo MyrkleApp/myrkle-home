@@ -8,6 +8,7 @@ import ellipse6 from "@/assets/landing-page/ellipse-6.png";
 import ellipse7 from "@/assets/landing-page/ellipse-7.png";
 import ellipse8 from "@/assets/landing-page/ellipse-8.png";
 import Image from "next/image";
+import { novaBlackFont } from "@/app/fonts";
 // import ellipse9 from "@/assets/landing-page/ellipse-9.png"
 
 function BubbleSection() {
@@ -24,7 +25,7 @@ function BubbleSection() {
 
       <Box zIndex={6} h="100%" pos="absolute" ml="25px">
         <Text
-          className="font-face-proxima-nova-black"
+          className={novaBlackFont.className}
           fontSize="40px"
           textAlign="center"
           mb="60px"
@@ -41,7 +42,7 @@ function BubbleSection() {
 
         <Text
           lineHeight={1.2}
-          className="font-face-proxima-nova-black"
+          className={novaBlackFont.className}
           fontSize="40px"
           textAlign="center"
           mb="60px"
@@ -57,7 +58,7 @@ function BubbleSection() {
         </Text>
 
         <Text
-          className="font-face-proxima-nova-black"
+          className={novaBlackFont.className}
           fontSize="40px"
           textAlign="center"
           mb="60px"

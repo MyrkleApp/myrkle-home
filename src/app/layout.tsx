@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import localFont from 'next/font/local'
+ 
+const myFont = localFont({
+  src: '../assets/fonts/Proxima_Nova_Font.otf',
+  display: 'swap',
+})
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
+export const metadata: Metadata = {
   title: "Myrkle",
   description: "Myrkle: Your gateway to a decentralized world",
   keywords: ["myrkle", "token", "nft", "asset", "crossmark", "gemwallet", "xumm", "xaman", "mint", "engine", "blockchain", "xrp", "ripple", "wallet", "crypto", "ledger"],
@@ -31,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={myFont.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
