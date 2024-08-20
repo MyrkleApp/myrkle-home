@@ -1,11 +1,12 @@
 import { MotionBox, MotionButton, MotionText } from "@/components/motion-elements";
 import landingBlurb from "@/assets/landing-blurb.svg";
-import { Box, Image } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import ROUTES from "@/routes";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 function SectionI() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <MotionBox
@@ -50,7 +51,7 @@ function SectionI() {
       </Box>
 
       <Box h="50%" pos="absolute" bottom={0} left={0} w="100%">
-        <Image src={landingBlurb} alt="" w="100%" />
+        <Image src={landingBlurb} alt="" style={{ width: "100%" }} />
       </Box>
 
       <MotionButton
@@ -64,7 +65,7 @@ function SectionI() {
         borderRadius="30px"
         overflow="hidden"
         zIndex={3}
-        onClick={() => navigate(ROUTES.SELECT_MYRKLE_APP)}
+        onClick={() => router.push(ROUTES.SELECT_MYRKLE_APP)}
         initial={{ width: 45, right: 0, color: "#fff" }}
         animate={{
           width: [45, 45, 45, 45, 180],

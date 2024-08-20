@@ -91,14 +91,14 @@ function LandingPage() {
     <Box w="100vw" h="100vh" pos="relative" bg="darker" overflow="hidden scroll">
       <HomeNavbar />
 
-      {/* <SectionA />
+      <SectionA />
 
       <Box h="100px" />
 
       <SectionB />
       <BubbleSection />
       <SectionI />
-      <SectionJ /> */}
+      <SectionJ />
     </Box>
   );
 }

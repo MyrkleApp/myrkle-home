@@ -1,7 +1,7 @@
 import LogoIcon from "@/icons/logo";
 import ROUTES from "@/routes";
 import { Flex, HStack, Text } from "@chakra-ui/react";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 
 const links = [
   { name: "home", path: `#home` },
@@ -10,7 +10,7 @@ const links = [
 ];
 
 function Footer() {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   const getNavItemColor = (route: string) => {
     return pathname === route ? "#000" : "#fff";

@@ -13,14 +13,14 @@ import Image from "next/image";
 function BubbleSection() {
   return (
     <Box mt="200px" h="1200px" pos="relative">
-      <Image src={ellipse1} pos="absolute" alt="" top="15px" left="65%" />
-      <Image src={ellipse2} pos="absolute" alt="" top="23%" left="30%" />
-      <Image src={ellipse3} pos="absolute" alt="" top="25%" left="70%" />
-      <Image src={ellipse4} pos="absolute" alt="" top="55%" left="60%" />
-      <Image src={ellipse5} pos="absolute" alt="" top="50%" left="30%" />
-      <Image src={ellipse6} pos="absolute" alt="" top="60%" left="15%" />
-      <Image src={ellipse7} pos="absolute" alt="" top="80%" left="55%" />
-      <Image src={ellipse8} pos="absolute" alt="" top="90%" left="55%" />
+      <Image src={ellipse1} alt="" style={{ position: "absolute", top: "15px", left: "65%"}} />
+      <Image src={ellipse2} alt="" style={{ position: "absolute", top: "23%", left: "30%"}} />
+      <Image src={ellipse3} alt="" style={{ position: "absolute", top: "25%", left: "70%"}} />
+      <Image src={ellipse4} alt="" style={{ position: "absolute", top: "55%", left: "60%"}} />
+      <Image src={ellipse5} alt="" style={{ position: "absolute", top: "50%", left: "30%"}} />
+      <Image src={ellipse6} alt="" style={{ position: "absolute", top: "60%", left: "15%"}} />
+      <Image src={ellipse7} alt="" style={{ position: "absolute", top: "80%", left: "55%"}} />
+      <Image src={ellipse8} alt="" style={{ position: "absolute", top: "90%", left: "55%"}} />
 
       <Box zIndex={6} h="100%" pos="absolute" ml="25px">
         <Text

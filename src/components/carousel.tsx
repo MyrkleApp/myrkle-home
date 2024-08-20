@@ -1,4 +1,4 @@
-import { Flex, Image } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import b1 from "@/assets/landing-page/b1.png";
@@ -9,6 +9,7 @@ import d1 from "@/assets/landing-page/d1.png";
 import d2 from "@/assets/landing-page/d2.png";
 import e1 from "@/assets/landing-page/e1.png";
 import e2 from "@/assets/landing-page/e2.png";
+import Image from "next/image";
 
 const images = [
   [b1, b2],
@@ -26,8 +27,8 @@ function MyCarousel({ handleChange }: MyCarouselProps) {
     <Carousel autoPlay infiniteLoop showThumbs={false} selectedItem={0} onChange={handleChange}>
       {images.map((image, i) => (
         <Flex key={i} justify="space-between" align="center" gap="50px" overflow="hidden">
-          <Image src={image[0]} alt="" maxW="35%" />
-          <Image src={image[1]} alt="" maxW="65%" />
+          <Image src={image[0]} alt="" style={{ maxWidth: "35%" }} />
+          <Image src={image[1]} alt="" style={{ maxWidth: "65%" }} />
         </Flex>
       ))}
     </Carousel>
