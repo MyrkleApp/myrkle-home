@@ -1,13 +1,24 @@
+"use client";
+
 import { MotionBox } from "@/components/motion-elements";
-import { Button, Flex, HStack, Input, Text } from "@chakra-ui/react";
+import { Button, Flex, HStack, Input, Text, useDisclosure } from "@chakra-ui/react";
 import ArrowRight3Icon from "@/icons/arrow-right-3";
 import spark1 from "@/assets/landing-page/spark1.png";
 import spark2 from "@/assets/landing-page/spark2.png";
 import Footer from "../footer";
 import Image from "next/image";
+import Backdrop from "../backdrop";
+import NewsletterModal from "../newsletter-modal";
 
 function SectionJ() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleSubmit = () => {
+    onOpen()
+  }
+
   return (
+    <>
     <MotionBox
       h="400px"
       pos="relative"
@@ -16,8 +27,8 @@ function SectionJ() {
       viewport={{ once: true }}
       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.5, ease: "easeOut" } }}
     >
-      <Flex justify="space-between" align="center" pos="absolute" w="100%" top="25%">
-        <Image src={spark1} alt="" style={{ width: "calc(50% - 200px)" }} />
+      <Flex justify="space-between" align="center" pos="absolute" w="100%" top="25%" pb="1000px">
+        <Image src={spark1} alt="" style={{ width: "calc(50% - 200px)" }} />       
         <MotionBox
           w="330px"
           zIndex={1}
@@ -29,17 +40,28 @@ function SectionJ() {
           </Text>
 
           <HStack>
-            <Input w="calc(100% - 70px)" bg="#fff" borderRadius="0" color="#000" />
-            <Button w="70px" borderRadius="0 7px 7px 0" bg="secondary" _hover={{ bg: "primary" }}>
+            {/* <Input w="calc(100% - 70px)" bg="#fff" borderRadius="0" color="#000" />
+            <Button w="70px" borderRadius="0 7px 7px 0" bg="secondary" _hover={{ bg: "primary" }} onClick={handleSubmit}>
               <ArrowRight3Icon fontSize="xl" />
+            </Button> */}
+
+            <Button w="100%" borderRadius="7px" bg="secondary" color="#ffffff" _hover={{ bg: "primary" }} onClick={handleSubmit}>
+              Subscribe
             </Button>
           </HStack>
-        </MotionBox>
+        </MotionBox> 
+
+
         <Image src={spark2} alt="" style={{ right: 0, width: "calc(50% - 200px)" }} />
       </Flex>
 
       <Footer />
     </MotionBox>
+
+    <Backdrop isOpen={isOpen} isFullscreen>
+      <NewsletterModal handleClose={onClose} />
+    </Backdrop>
+    </>
   );
 }
 
