@@ -1,7 +1,7 @@
 "use client"
 
 import { Box } from "@chakra-ui/react";
-import { useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import SectionA from "./section-a";
 import SectionB from "./section-b";
 import SectionI from "./section-i";
@@ -88,18 +88,20 @@ function LandingPage() {
   }, [scrollDown, scrollUp]);
 
   return (
-    <Box w="100vw" h="100vh" pos="relative" bg="darker" overflow="hidden scroll">
-      <HomeNavbar />
+    <Suspense>
+      <Box w="100vw" h="100vh" pos="relative" bg="darker" overflow="hidden scroll">
+        <HomeNavbar />
 
-      <SectionA />
+        <SectionA />
 
-      <Box h="100px" />
+        <Box h="100px" />
 
-      <SectionB />
-      <BubbleSection />
-      <SectionI />
-      <SectionJ />
-    </Box>
+        <SectionB />
+        <BubbleSection />
+        <SectionI />
+        <SectionJ />
+      </Box>
+    </Suspense>
   );
 }
 
