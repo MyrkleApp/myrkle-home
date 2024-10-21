@@ -2,3 +2,21 @@
   color: #fff;
   scroll-behavior: smooth;
 }
+
+.app {
+  display: block;
+}
+
+.under-construction {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  .app {
+    display: none;
+  }
+
+  .under-construction {
+    display: block;
+  }
+}
